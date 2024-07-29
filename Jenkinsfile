@@ -1,14 +1,14 @@
 pipeline {
   environment {
-    imagename = "yenigul/hacicenkins"
-    registryCredential = 'yenigul-dockerhub'
+    imagename = "Sherwan001/hacicenkins"
+    registryCredential = 'Sherwan001-dockerhub'
     dockerImage = ''
   }
   agent any
   stages {
     stage('Cloning Git') {
       steps {
-        git([url: 'https://github.com/ismailyenigul/hacicenkins.git', branch: 'master', credentialsId: 'ismailyenigul-github-user-token'])
+        git([url: 'https://https://github.com/Sherwan001/Project.git', branch: 'master', credentialsId: 'Sherwan001-github-user-token'])
 
       }
     }
