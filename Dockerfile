@@ -1,5 +1,4 @@
-FROM python:2.7
-WORKDIR /html
-COPY . .
-EXPOSE 3000
-CMD python -m SimpleHTTPServer 3000
+from alpine:latest
+ run apk add nginx 
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
