@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    environment {
+	SERVICE = "final"	
+	REPONAME = "forK8S"
+	DOCKERHUM_USERNAME = "sherwan123"
+	IMAGE_TAG = "${DOCKERHUB_USERNAME}/${forK8S}:${BUILD_NUMBER}"
+
+}
+    stages {
+        stage('Build and push the image') {
+            steps {
+                withDockerRegistry
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
